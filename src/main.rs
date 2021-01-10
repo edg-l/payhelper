@@ -42,6 +42,7 @@ fn main() -> Result<(), ureq::Error> {
     println!("//! Generated using https://github.com/edg-l/payhelper");
     println!();
     println!("use serde::{{Deserialize, Serialize}};");
+    println!("use std::str::FromStr;");
     println!("use crate::errors::InvalidCountryError;");
     println!();
     println!("/// IS0-3166-1 country codes");
@@ -64,7 +65,7 @@ fn main() -> Result<(), ureq::Error> {
         std::fmt::Debug::fmt(&self, f)
     }}
 }}"#);
-
+    println!();
     println!("impl FromStr for Country {{");
     println!("    type Err = InvalidCountryError;");
     println!();
